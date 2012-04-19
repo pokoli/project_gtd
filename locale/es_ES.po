@@ -1,0 +1,88 @@
+# 
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Sergi Almacellas Abellana <sergi@koolpi.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "field:project.work,context:0"
+msgid "Context"
+msgstr "Contexto"
+
+msgctxt "field:project.work,priority:0"
+msgid "Priority"
+msgstr "Prioridad"
+
+msgctxt "field:task.context,name:0"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:task.context,rec_name:0"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:task.context,sequence:0"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "field:task.priority,name:0"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:task.priority,rec_name:0"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:task.priority,sequence:0"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "model:ir.action,name:act_task_context_tree"
+msgid "Contexts"
+msgstr "Contextos"
+
+msgctxt "model:ir.action,name:act_task_priority_tree"
+msgid "Priorities"
+msgstr "Prioridades"
+
+msgctxt "model:ir.ui.menu,name:menu_gtd_configuration"
+msgid "Getting Thinks Done"
+msgstr "Consiguiendo hacer las cosas"
+
+msgctxt "model:ir.ui.menu,name:menu_task_context"
+msgid "Contexts"
+msgstr "Contextos"
+
+msgctxt "model:ir.ui.menu,name:menu_task_priority"
+msgid "Priorities"
+msgstr "Prioridades"
+
+msgctxt "model:task.context,name:0"
+msgid "task.context"
+msgstr "Contexto"
+
+msgctxt "model:task.priority,name:0"
+msgid "task.priority"
+msgstr "Prioridad"
+
+msgctxt "view:task.context:0"
+msgid "Context"
+msgstr "Contexto"
+
+msgctxt "view:task.context:0"
+msgid "Contexts"
+msgstr "Contextos"
+
+msgctxt "view:task.priority:0"
+msgid "Context"
+msgstr "Contexto"
+
+msgctxt "view:task.priority:0"
+msgid "Priorities"
+msgstr "Prioridades"
+

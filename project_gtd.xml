@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Tree for task.context -->
+        <record model="ir.ui.view" id="task_context_tree">
+            <field name="model">task.context</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Contexts">
+                    <field name="sequence" />
+                    <field name="name" />
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <!-- Tree for task.priority -->
+        <record model="ir.ui.view" id="task_priority_tree">
+            <field name="model">task.priority</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <tree string="Priorities">
+                    <field name="sequence" />
+                    <field name="name" />
+                </tree>
+                ]]>
+            </field>
+        </record>
+        <!-- Form for task.context -->
+        <record model="ir.ui.view" id="task_context_form">
+            <field name="model">task.context</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                    <form string="Context" col="6">
+                        <label name="sequence" />
+                        <field name="sequence" />
+                        <label name="name" />
+                        <field name="name" />
+                    </form>
+                ]]>
+            </field>
+        </record>
+        <!-- Form for task.priority -->
+        <record model="ir.ui.view" id="task_priority_form">
+            <field name="model">task.priority</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                    <form string="Context" col="6">
+                        <label name="sequence" />
+                        <field name="sequence" />
+                        <label name="name" />
+                        <field name="name" />
+                    </form>
+                ]]>
+            </field>
+        </record>
+        <!-- Actions/MenuItems for task.priority/task.context -->
+        <menuitem name="Getting Thinks Done" id="menu_gtd_configuration" parent="project.menu_configuration" sequence="10" />
+        <record model="ir.action.act_window" id="act_task_context_tree">
+            <field name="name">Contexts</field>
+            <field name="res_model">task.context</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_context_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="task_context_tree"/>
+            <field name="act_window" ref="act_task_context_tree"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_context_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="task_context_form"/>
+            <field name="act_window" ref="act_task_context_tree"/>
+        </record>
+        <menuitem parent="menu_gtd_configuration" action="act_task_context_tree" id="menu_task_context"/>
+        <record model="ir.action.act_window" id="act_task_priority_tree">
+            <field name="name">Priorities</field>
+            <field name="res_model">task.priority</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_priority_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="task_priority_tree"/>
+            <field name="act_window" ref="act_task_priority_tree"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_priority_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="task_priority_form"/>
+            <field name="act_window" ref="act_task_priority_tree"/>
+        </record>
+        <menuitem parent="menu_gtd_configuration" action="act_task_priority_tree" id="menu_task_priority"/>
+        <!-- Extend the task's tree view -->
+        <record model="ir.ui.view" id="work_view_list2">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_list2"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/tree/field[@name='hours']" position="after">
+                        <field name="context"/>
+                        <field name="priority"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+        <!-- Extend the task's form view -->
+        <record model="ir.ui.view" id="project_gtd_view_form">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_form"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/form/notebook" position="before">
+                        <label name="context"/>
+                        <field name="context"/>
+                        <label name="priority"/>
+                        <field name="priority"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+    </data>
+</tryton>
